@@ -1,0 +1,33 @@
+
+PUT http://localhost:8080/api/v1/teacher/update-detail
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMjM2NzE5LCJleHAiOjE2NTMyNDAzMTksInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.6gYSbDf2Ppx-xrGOgSKh0FPf8D2s3jNbJuXApDjFJ2Q
+
+{
+  "firstName": "Ali",
+  "lastName": "Aliyev"
+}
+
+###
+GET http://localhost:8080/api/v1/teacher/get-teacher/+998931234321
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMjQ0MjYyLCJleHAiOjE2NTMyNDc4NjIsInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.MnJpEXJZGZ0o4V_Mv4d_BgfU39PVVKc6k--BCcKqDFM
+
+###
+PUT http://localhost:8080/api/v1/teacher/update-salary
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMjQ0MjYyLCJleHAiOjE2NTMyNDc4NjIsInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.MnJpEXJZGZ0o4V_Mv4d_BgfU39PVVKc6k--BCcKqDFM
+
+{
+  "salary": "1200000",
+  "phone": "+998931234321"
+}
+
+###
+GET http://localhost:8080/api/v1/teacher/list
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMjUyMTc2LCJleHAiOjE2NTMyNTU3NzYsInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.7bSF_y_gkaAaww6P6xfLowtZREHuJZvRe02x_DOy87k
+
+###
+DELETE http://localhost:8080/api/v1/teacher/delete?id=4
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMjU2MTQ4LCJleHAiOjE2NTMyNTk3NDgsInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.6Kt4xzNJTssKFd4nUUXey0aewqZLC92hCJ1nakYSWCU

@@ -1,0 +1,34 @@
+POST http://localhost:8080/api/v1/registration/teacher
+Content-Type: application/json
+
+{
+  "firstName": "Ali",
+  "lastName": "Aliyev",
+  "phone": "+998931234321",
+  "password": "password"
+}
+
+###
+POST http://localhost:8080/api/v1/registration/teacher
+Content-Type: application/json
+
+{
+  "firstName": "Vali",
+  "lastName": "Valiyev",
+  "phone": "+998904004044",
+  "password": "password"
+}
+
+###
+POST http://localhost:8080/api/v1/registration/student
+Content-Type: application/json
+
+{
+  "firstName": "Alisher",
+  "lastName": "Alijonov",
+  "phone": "+998912132003",
+  "password": "password"
+}
+
+###
+GET http://localhost:8080/api/v1/registration/confirm?sms=61188

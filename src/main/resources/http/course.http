@@ -1,0 +1,32 @@
+POST http://localhost:8080/api/v1/course/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzIxMDU5LCJleHAiOjE2NTMzMjQ2NTksInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.YC3azfUV2MD1_ObLDiMO17Lx7McVrzWuUN2vsoHGvDM
+
+{
+  "name": "HELLO",
+  "duration": "9",
+  "price": "2670000"
+}
+
+###
+GET http://localhost:8080/api/v1/course/list
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzIxMDU5LCJleHAiOjE2NTMzMjQ2NTksInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.YC3azfUV2MD1_ObLDiMO17Lx7McVrzWuUN2vsoHGvDM
+
+###
+GET http://localhost:8080/api/v1/course/get/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzIxMDU5LCJleHAiOjE2NTMzMjQ2NTksInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.YC3azfUV2MD1_ObLDiMO17Lx7McVrzWuUN2vsoHGvDM
+
+###
+PUT http://localhost:8080/api/v1/course/update
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzIxMDU5LCJleHAiOjE2NTMzMjQ2NTksInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.YC3azfUV2MD1_ObLDiMO17Lx7McVrzWuUN2vsoHGvDM
+
+{
+  "id": "3",
+  "name": "FRONTEND"
+}
+
+###
+DELETE http://localhost:8080/api/v1/course/delete/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzIxMDU5LCJleHAiOjE2NTMzMjQ2NTksInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.YC3azfUV2MD1_ObLDiMO17Lx7McVrzWuUN2vsoHGvDM

@@ -1,0 +1,25 @@
+POST http://localhost:8080/api/v1/authorization/login
+Content-Type: application/json
+
+{
+  "username": "+998932158000",
+  "password": "Akobir2003"
+}
+
+###
+POST http://localhost:8080/api/v1/authorization/login
+Content-Type: application/json
+
+{
+"username": "+998931234321",
+"password": "password"
+}
+
+###
+POST http://localhost:8080/api/v1/authorization/login
+Content-Type: application/json
+
+{
+"username": "+998912132003",
+"password": "password"
+}

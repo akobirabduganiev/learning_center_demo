@@ -1,0 +1,21 @@
+PUT http://localhost:8080/api/v1/student/update-detail
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2IiwiaWF0IjoxNjUzMjg4NjExLCJleHAiOjE2NTMyOTIyMTEsInVzZXJOYW1lIjoiKzk5ODkxMjEzMjAwMyIsImlzcyI6IkRBVlJfQkFOSyJ9.lxooMInwnGNGoqpnVj51gL7j4Z_PsYeZiOKm4Gg2ntE
+
+{
+  "firstName": "Bobur",
+  "lastName": "Alixonov"
+}
+
+###
+GET http://localhost:8080/api/v1/student/get-student/+998912132003
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMjg3NDExLCJleHAiOjE2NTMyOTEwMTEsInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.-YkbUsLFDC_ry4_4WCXMHXikxhIJCeviq8_01e0jqhQ
+
+###
+GET http://localhost:8080/api/v1/student/list
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMjg3NDExLCJleHAiOjE2NTMyOTEwMTEsInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.-YkbUsLFDC_ry4_4WCXMHXikxhIJCeviq8_01e0jqhQ
+
+###
+DELETE http://localhost:8080/api/v1/student/delete?id=1
