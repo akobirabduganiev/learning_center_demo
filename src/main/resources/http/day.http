@@ -1,0 +1,30 @@
+POST http://localhost:8080/api/v1/day/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzI1NjI5LCJleHAiOjE2NTMzMjkyMjksInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.atDTC62Gv35raTtW7iM2d7l_Uy0HEmWaZhCkKE7tQ_I
+
+{
+  "name": "Tuesday"
+}
+
+###
+GET http://localhost:8080/api/v1/day/list
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzI1NjI5LCJleHAiOjE2NTMzMjkyMjksInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.atDTC62Gv35raTtW7iM2d7l_Uy0HEmWaZhCkKE7tQ_I
+
+###
+GET http://localhost:8080/api/v1/day/get/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzI1NjI5LCJleHAiOjE2NTMzMjkyMjksInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.atDTC62Gv35raTtW7iM2d7l_Uy0HEmWaZhCkKE7tQ_I
+
+###
+DELETE http://localhost:8080/api/v1/day/delete/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzI1NjI5LCJleHAiOjE2NTMzMjkyMjksInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.atDTC62Gv35raTtW7iM2d7l_Uy0HEmWaZhCkKE7tQ_I
+
+###
+PUT http://localhost:8080/api/v1/day/update
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzI1NjI5LCJleHAiOjE2NTMzMjkyMjksInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.atDTC62Gv35raTtW7iM2d7l_Uy0HEmWaZhCkKE7tQ_I
+
+{
+  "name": "Tuesday",
+  "id": "2"
+}

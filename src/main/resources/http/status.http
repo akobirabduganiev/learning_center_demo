@@ -1,0 +1,24 @@
+POST http://localhost:8080/api/v1/status/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzI5NDA1LCJleHAiOjE2NTMzMzMwMDUsInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.xPKas8C_PtD9r1MAO4y8FAnh5LPFHX2CTGh9Y8aliOY
+
+{
+  "name": "ACTIVE",
+  "description": "this status is an active"
+}
+
+###
+GET http://localhost:8080/api/v1/status/list
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzI5NDA1LCJleHAiOjE2NTMzMzMwMDUsInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.xPKas8C_PtD9r1MAO4y8FAnh5LPFHX2CTGh9Y8aliOY
+
+###
+PUT http://localhost:8080/api/v1/status/update
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzI5NDA1LCJleHAiOjE2NTMzMzMwMDUsInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.xPKas8C_PtD9r1MAO4y8FAnh5LPFHX2CTGh9Y8aliOY
+
+{
+  "id": "1",
+  "name": "BLOCK",
+  "description": "this status is a block"
+}

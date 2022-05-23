@@ -1,0 +1,7 @@
+POST http://localhost:8080/api/v1/payment-type/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzI5NDA1LCJleHAiOjE2NTMzMzMwMDUsInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.xPKas8C_PtD9r1MAO4y8FAnh5LPFHX2CTGh9Y8aliOY
+
+{
+  "name": "ONLINE"
+}

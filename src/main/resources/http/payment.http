@@ -1,0 +1,36 @@
+POST http://localhost:8080/api/v1/payment/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzM1NzQ5LCJleHAiOjE2NTMzMzkzNDksInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.ijkthJ0f_KMnzpsfaqx8tBdODFUVUmxWXZAReV7WNKw
+
+{
+  "sum": "2000000",
+  "description": "new payment created",
+  "studentId": "2",
+  "paymentTypeId": "1"
+}
+
+###
+GET http://localhost:8080/api/v1/payment/get/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzM1NzQ5LCJleHAiOjE2NTMzMzkzNDksInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.ijkthJ0f_KMnzpsfaqx8tBdODFUVUmxWXZAReV7WNKw
+
+###
+GET http://localhost:8080/api/v1/payment/list
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzM3MDcxLCJleHAiOjE2NTMzNDA2NzEsInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.GpuN7Ln0XakZg6IHWJE79Pn_0Kiiu5iCgiGIoMHds8Y
+
+###
+DELETE http://localhost:8080/api/v1/payment/delete/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzM1NzQ5LCJleHAiOjE2NTMzMzkzNDksInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.ijkthJ0f_KMnzpsfaqx8tBdODFUVUmxWXZAReV7WNKw
+
+###
+PUT http://localhost:8080/api/v1/payment/update
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzM3MDcxLCJleHAiOjE2NTMzNDA2NzEsInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.GpuN7Ln0XakZg6IHWJE79Pn_0Kiiu5iCgiGIoMHds8Y
+
+{
+  "id": "2",
+  "studentId": "2",
+  "paymentTypeId": "1",
+  "sum": "3000000"
+}

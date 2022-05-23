@@ -45,6 +45,12 @@ public class StudentService {
         return toDTO(entity);
     }
 
+    public StudentDTO getStudentById(Long id) {
+        return toDTO(studentRepository.findById(id).orElseThrow(
+                () -> new ItemNotFoundException("student not found!"))
+        );
+    }
+
     public String delete(Long id) {
         var entity = studentRepository.findById(id)
                 .orElseThrow(() -> new ItemNotFoundException("student not found!"));
@@ -76,7 +82,7 @@ public class StudentService {
         studentRepository.save(entity);
     }
 
-    public StudentDTO toDTO(StudentEntity entity){
+    public StudentDTO toDTO(StudentEntity entity) {
         var dto = new StudentDTO();
 
         dto.setPhone(entity.getUser().getPhone());
