@@ -23,6 +23,7 @@ public class PaymentController {
     @PostMapping("/create")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<PaymentDTO> create(@RequestBody PaymentDTO dto) {
+        log.info("Create payment {}" , dto);
         return ResponseEntity.ok(paymentService.create(dto));
     }
 
@@ -42,12 +43,14 @@ public class PaymentController {
     @PutMapping("/update")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> update(@RequestBody ChangePaymentDetailDTO dto) {
+        log.info("Update payment detail {}", dto);
         return ResponseEntity.ok(paymentService.update(dto));
     }
 
     @DeleteMapping("/delete/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> delete(@PathVariable("id") Long id) {
+        log.info("Delete payment {}", id);
         return ResponseEntity.ok(paymentService.delete(id));
     }
 }

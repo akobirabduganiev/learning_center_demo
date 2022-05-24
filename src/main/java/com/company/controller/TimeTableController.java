@@ -23,6 +23,7 @@ public class TimeTableController {
     @PostMapping("/create")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<TimeTableDTO> create(@RequestBody TimeTableDTO dto) {
+        log.info("Create time table {}" , dto);
         return ResponseEntity.ok(timeTableService.create(dto));
     }
 
@@ -42,12 +43,14 @@ public class TimeTableController {
     @PutMapping("/update")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> update(@RequestBody ChangeTimeTableDetailDTO dto) {
+        log.info("Update time table detail {}", dto);
         return ResponseEntity.ok(timeTableService.update(dto));
     }
 
     @DeleteMapping("/delete/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> delete(@PathVariable("id") Long id) {
+        log.info("Delete time type {}", id);
         return ResponseEntity.ok(timeTableService.delete(id));
     }
 }

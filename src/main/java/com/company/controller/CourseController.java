@@ -23,6 +23,7 @@ public class CourseController {
     @PostMapping("/create")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<CourseDTO> create (@RequestBody CourseDTO dto){
+        log.info("Create Course {}", dto);
         return ResponseEntity.ok(courseService.create(dto));
     }
 
@@ -42,12 +43,14 @@ public class CourseController {
     @PutMapping("/update")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> update(@RequestBody ChangeCourseDetailDTO dto){
+        log.info("Update course detail {}", dto);
         return ResponseEntity.ok(courseService.update(dto));
     }
 
     @DeleteMapping("/delete/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> delete(@PathVariable("id") Long id){
+        log.info("Delete course {}", id);
         return ResponseEntity.ok(courseService.delete(id));
     }
 }

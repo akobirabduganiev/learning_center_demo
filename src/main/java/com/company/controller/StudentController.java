@@ -26,9 +26,8 @@ public class StudentController {
     @PreAuthorize("hasRole('STUDENT')")
     public ResponseEntity<?> updateDetail(@RequestBody UserDetailDTO dto,
                                           Authentication authentication) {
-
+        log.info("Update user detail {}", dto);
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-
         return ResponseEntity.ok(studentService.updateStudentDetail(dto, userDetails.getUsername()));
     }
 
@@ -52,6 +51,7 @@ public class StudentController {
     @DeleteMapping(path = "delete")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> delete(@RequestParam("id") Long id) {
+        log.info("Delete student {}", id);
         return ResponseEntity.ok(studentService.delete(id));
     }
 }

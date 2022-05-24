@@ -23,6 +23,7 @@ public class StatusController {
     @PostMapping("/create")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<StatusDTO> create(@RequestBody StatusDTO dto) {
+        log.info("Create status {}" , dto);
         return ResponseEntity.ok(statusService.create(dto));
     }
 
@@ -42,12 +43,14 @@ public class StatusController {
     @PutMapping("/update")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> update(@RequestBody ChangeStatusDetailDTO dto) {
+        log.info("Update status detail {}", dto);
         return ResponseEntity.ok(statusService.update(dto));
     }
 
     @DeleteMapping("/delete/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> delete(@PathVariable("id") Long id) {
+        log.info("Delete status {}", id);
         return ResponseEntity.ok(statusService.delete(id));
     }
 }

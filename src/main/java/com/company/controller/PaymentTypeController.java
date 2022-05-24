@@ -23,6 +23,7 @@ public class PaymentTypeController {
     @PostMapping("/create")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<PaymentTypeDTO> create(@RequestBody PaymentTypeDTO dto) {
+        log.info("Create payment type {}" , dto);
         return ResponseEntity.ok(paymentTypeService.create(dto));
     }
 
@@ -42,12 +43,14 @@ public class PaymentTypeController {
     @PutMapping("/update")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> update(@RequestBody ChangePaymentTypeDetailDTO dto) {
+        log.info("Update payment type detail {}", dto);
         return ResponseEntity.ok(paymentTypeService.update(dto));
     }
 
     @DeleteMapping("/delete/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> delete(@PathVariable("id") Long id) {
+        log.info("Delete payment type {}", id);
         return ResponseEntity.ok(paymentTypeService.delete(id));
     }
 }

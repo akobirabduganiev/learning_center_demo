@@ -23,6 +23,7 @@ public class DayController {
     @PostMapping("/create")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<DayDTO> create(@RequestBody DayDTO dto) {
+        log.info("Create day {}" , dto);
         return ResponseEntity.ok(dayService.create(dto));
     }
 
@@ -42,12 +43,14 @@ public class DayController {
     @PutMapping("/update")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> update(@RequestBody ChangeDayDetailDTO dto) {
+        log.info("Update day detail {}", dto);
         return ResponseEntity.ok(dayService.update(dto));
     }
 
     @DeleteMapping("/delete/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> delete(@PathVariable("id") Long id) {
+        log.info("Delete day {}", id);
         return ResponseEntity.ok(dayService.delete(id));
     }
 }

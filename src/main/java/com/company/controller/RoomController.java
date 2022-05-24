@@ -23,6 +23,7 @@ public class RoomController {
     @PostMapping("/create")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<RoomDTO> create(@RequestBody RoomDTO dto) {
+        log.info("Create room {}" , dto);
         return ResponseEntity.ok(roomService.create(dto));
     }
 
@@ -42,12 +43,14 @@ public class RoomController {
     @PutMapping("/update")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> update(@RequestBody ChangeRoomDetailDTO dto) {
+        log.info("Update room detail {}", dto);
         return ResponseEntity.ok(roomService.update(dto));
     }
 
     @DeleteMapping("/delete/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> delete(@PathVariable("id") Long id) {
+        log.info("Delete room {}", id);
         return ResponseEntity.ok(roomService.delete(id));
     }
 }

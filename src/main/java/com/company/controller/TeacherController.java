@@ -28,7 +28,7 @@ public class TeacherController {
     @PreAuthorize("hasRole('TEACHER')")
     public ResponseEntity<?> updateDetail(@RequestBody UserDetailDTO dto,
                                           Authentication authentication) {
-
+        log.info("Update user detail {}", dto);
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
 
         return ResponseEntity.ok(teacherService.updateTeacherDetail(dto, userDetails.getUsername()));
@@ -47,6 +47,7 @@ public class TeacherController {
     @PutMapping("/update-salary")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> updateSalary(@RequestBody ChangeTeacherSalaryDTO dto) {
+        log.info("Update teacher salary {}", dto);
         return ResponseEntity.ok(teacherService.updateSalary(dto));
     }
 
@@ -60,6 +61,7 @@ public class TeacherController {
     @DeleteMapping(path = "delete")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> delete(@RequestParam("id") Long id) {
+        log.info("Delete teacher {}", id);
         return ResponseEntity.ok(teacherService.delete(id));
     }
 }
