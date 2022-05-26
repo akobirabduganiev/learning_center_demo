@@ -1,0 +1,29 @@
+POST http://localhost:8080/api/v1/time-table/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNjUzMzg0NTMzLCJleHAiOjE2NTMzODgxMzQsInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.B6d7xuFrWMJyCvRimTunhu1BrdbNCG1dz42CUtbQ6u0
+
+{
+  "dayId": "1",
+  "startTime": "08:30",
+  "endTime": "12:30"
+}
+
+###
+GET http://localhost:8080/api/v1/time-table/get/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzM5ODM2LCJleHAiOjE2NTMzNDM0MzYsInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.ieYxWjJEmDlYbOdgTpWZIB-bKL1TWXJFakKEZPRHYCM
+
+###
+DELETE http://localhost:8080/api/v1/time-table/delete/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzM5ODM2LCJleHAiOjE2NTMzNDM0MzYsInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.ieYxWjJEmDlYbOdgTpWZIB-bKL1TWXJFakKEZPRHYCM
+
+###
+PUT http://localhost:8080/api/v1/time-table/update
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzM5ODM2LCJleHAiOjE2NTMzNDM0MzYsInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.ieYxWjJEmDlYbOdgTpWZIB-bKL1TWXJFakKEZPRHYCM
+
+{
+  "id": "2",
+  "startTime": "10:00",
+  "endTime": "13:00"
+}

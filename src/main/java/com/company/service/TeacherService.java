@@ -1,13 +1,12 @@
 package com.company.service;
 
-import com.company.dto.ChangeTeacherSalaryDTO;
-import com.company.dto.TeacherDTO;
-import com.company.dto.UserDetailDTO;
+import com.company.dto.teacher.ChangeTeacherSalaryDTO;
+import com.company.dto.teacher.TeacherDTO;
+import com.company.dto.user.UserDetailDTO;
 import com.company.entity.TeacherEntity;
 import com.company.exceptions.ItemNotFoundException;
 import com.company.repository.TeacherRepository;
-import com.company.user.User;
-import com.company.user.UserService;
+import com.company.entity.UserEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
@@ -52,7 +51,7 @@ public class TeacherService {
         TeacherEntity entity = teacherRepository.findById(id).orElseThrow(() -> new ItemNotFoundException("teacher not found!"));
 
         teacherRepository.deleteById(id);
-        userService.deleteById(entity.getUser().getId());
+        userService.deleteById(entity.getUserEntity().getId());
 
         return "teacher deleted successfully";
     }
@@ -68,6 +67,12 @@ public class TeacherService {
         dto.setSalary(entity.getSalary());
 
         return dto;
+    }
+
+    public TeacherDTO getTeacherById(Long id) {
+        return toDTO(
+                teacherRepository.findById(id).orElseThrow(() -> new ItemNotFoundException("teacher not found!"))
+        );
     }
 
     /**
@@ -87,9 +92,9 @@ public class TeacherService {
     private TeacherDTO toDTO(TeacherEntity entity) {
         var dto = new TeacherDTO();
 
-        dto.setFirstName(entity.getUser().getFirstName());
-        dto.setLastName(entity.getUser().getFirstName());
-        dto.setPhone(entity.getUser().getPhone());
+        dto.setFirstName(entity.getUserEntity().getFirstName());
+        dto.setLastName(entity.getUserEntity().getFirstName());
+        dto.setPhone(entity.getUserEntity().getPhone());
         dto.setSalary(entity.getSalary());
         dto.setCreatedDate(entity.getCreatedDate());
         dto.setLastModifiedDate(entity.getLastModifiedDate());
@@ -97,10 +102,10 @@ public class TeacherService {
         return dto;
     }
 
-    public void saveTeacher(User user) {
+    public void saveTeacher(UserEntity userEntity) {
         var entity = new TeacherEntity();
 
-        entity.setUser(user);
+        entity.setUserEntity(userEntity);
         teacherRepository.save(entity);
     }
 

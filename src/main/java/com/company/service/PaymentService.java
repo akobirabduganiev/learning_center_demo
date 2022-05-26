@@ -1,7 +1,7 @@
 package com.company.service;
 
-import com.company.dto.ChangePaymentDetailDTO;
-import com.company.dto.PaymentDTO;
+import com.company.dto.payment.ChangePaymentDetailDTO;
+import com.company.dto.payment.PaymentDTO;
 import com.company.entity.PaymentEntity;
 import com.company.exceptions.ItemNotFoundException;
 import com.company.repository.PaymentRepository;

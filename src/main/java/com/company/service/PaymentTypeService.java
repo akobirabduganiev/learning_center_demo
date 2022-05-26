@@ -1,7 +1,7 @@
 package com.company.service;
 
-import com.company.dto.ChangePaymentTypeDetailDTO;
-import com.company.dto.PaymentTypeDTO;
+import com.company.dto.payment.ChangePaymentTypeDetailDTO;
+import com.company.dto.payment.PaymentTypeDTO;
 import com.company.entity.PaymentTypeEntity;
 import com.company.exceptions.ItemAlreadyExistsException;
 import com.company.exceptions.ItemNotFoundException;

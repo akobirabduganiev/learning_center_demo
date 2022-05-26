@@ -1,13 +1,15 @@
 package com.company.controller;
 
-import com.company.dto.ChangeStatusDetailDTO;
-import com.company.dto.StatusDTO;
+import com.company.dto.status.ChangeStatusDetailDTO;
+import com.company.dto.status.StatusDTO;
 import com.company.service.StatusService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("api/v1/status")
@@ -22,7 +24,7 @@ public class StatusController {
 
     @PostMapping("/create")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<StatusDTO> create(@RequestBody StatusDTO dto) {
+    public ResponseEntity<StatusDTO> create(@RequestBody @Valid StatusDTO dto) {
         log.info("Create status {}" , dto);
         return ResponseEntity.ok(statusService.create(dto));
     }
@@ -42,7 +44,7 @@ public class StatusController {
 
     @PutMapping("/update")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<?> update(@RequestBody ChangeStatusDetailDTO dto) {
+    public ResponseEntity<?> update(@RequestBody @Valid ChangeStatusDetailDTO dto) {
         log.info("Update status detail {}", dto);
         return ResponseEntity.ok(statusService.update(dto));
     }

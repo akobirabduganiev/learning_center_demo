@@ -1,13 +1,15 @@
 package com.company.controller;
 
-import com.company.dto.ChangeDayDetailDTO;
-import com.company.dto.DayDTO;
+import com.company.dto.day.ChangeDayDetailDTO;
+import com.company.dto.day.DayDTO;
 import com.company.service.DayService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("api/v1/day")
@@ -22,7 +24,7 @@ public class DayController {
 
     @PostMapping("/create")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<DayDTO> create(@RequestBody DayDTO dto) {
+    public ResponseEntity<DayDTO> create(@RequestBody @Valid DayDTO dto) {
         log.info("Create day {}" , dto);
         return ResponseEntity.ok(dayService.create(dto));
     }
@@ -42,7 +44,7 @@ public class DayController {
 
     @PutMapping("/update")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<?> update(@RequestBody ChangeDayDetailDTO dto) {
+    public ResponseEntity<?> update(@RequestBody @Valid ChangeDayDetailDTO dto) {
         log.info("Update day detail {}", dto);
         return ResponseEntity.ok(dayService.update(dto));
     }

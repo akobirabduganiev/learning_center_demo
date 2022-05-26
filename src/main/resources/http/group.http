@@ -1,0 +1,16 @@
+POST http://localhost:8080/api/v1/group/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNjUzMzgxMjU4LCJleHAiOjE2NTMzODQ4NTgsInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.uCYH9FVMndFwBnNkULPDLaM-XtdtZ5MGGKBzap7fLv8
+
+{
+  "name": "Java bootcamp group",
+  "startDate": "21/12/2021",
+  "endDate": "21/10/2022",
+  "courseId": "1",
+  "teacherId": "1",
+  "roomId": "1",
+  "statusId": "1"
+}
+
+###
+GET http://localhost:8080/api/v1/group/list

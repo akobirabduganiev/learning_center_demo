@@ -1,7 +1,7 @@
 package com.company.service;
 
-import com.company.dto.ChangeTimeTableDetailDTO;
-import com.company.dto.TimeTableDTO;
+import com.company.dto.time.ChangeTimeTableDetailDTO;
+import com.company.dto.time.TimeTableDTO;
 import com.company.entity.TimeTableEntity;
 import com.company.exceptions.ItemNotFoundException;
 import com.company.repository.TimeTableRepository;
@@ -31,7 +31,8 @@ public class TimeTableService {
 
         var entity = new TimeTableEntity();
         entity.setStartTime(dto.getStartTime());
-
+        entity.setEndTime(dto.getEndTime());
+        entity.setDayId(dto.getDayId());
         timeTableRepository.save(entity);
 
         dto.setId(entity.getId());

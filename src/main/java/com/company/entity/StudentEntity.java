@@ -1,6 +1,5 @@
 package com.company.entity;
 
-import com.company.user.User;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,5 +16,5 @@ public class StudentEntity extends BaseEntity {
 
     @OneToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private UserEntity userEntity;
 }

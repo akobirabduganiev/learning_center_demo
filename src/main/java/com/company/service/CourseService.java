@@ -1,13 +1,12 @@
 package com.company.service;
 
-import com.company.dto.ChangeCourseDetailDTO;
-import com.company.dto.CourseDTO;
+import com.company.dto.course.ChangeCourseDetailDTO;
+import com.company.dto.course.CourseDTO;
 import com.company.entity.CourseEntity;
 import com.company.exceptions.ItemAlreadyExistsException;
 import com.company.exceptions.ItemNotFoundException;
 import com.company.repository.CourseRepository;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;

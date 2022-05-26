@@ -1,8 +1,8 @@
 package com.company.controller;
 
-import com.company.dto.ChangeTeacherSalaryDTO;
-import com.company.dto.TeacherDTO;
-import com.company.dto.UserDetailDTO;
+import com.company.dto.teacher.ChangeTeacherSalaryDTO;
+import com.company.dto.teacher.TeacherDTO;
+import com.company.dto.user.UserDetailDTO;
 import com.company.service.TeacherService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -11,6 +11,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Slf4j
 @RestController
@@ -26,7 +28,7 @@ public class TeacherController {
 
     @PutMapping("/update-detail")
     @PreAuthorize("hasRole('TEACHER')")
-    public ResponseEntity<?> updateDetail(@RequestBody UserDetailDTO dto,
+    public ResponseEntity<?> updateDetail(@RequestBody @Valid UserDetailDTO dto,
                                           Authentication authentication) {
         log.info("Update user detail {}", dto);
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
@@ -46,7 +48,7 @@ public class TeacherController {
 
     @PutMapping("/update-salary")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<?> updateSalary(@RequestBody ChangeTeacherSalaryDTO dto) {
+    public ResponseEntity<?> updateSalary(@RequestBody @Valid ChangeTeacherSalaryDTO dto) {
         log.info("Update teacher salary {}", dto);
         return ResponseEntity.ok(teacherService.updateSalary(dto));
     }

@@ -1,11 +1,11 @@
 POST http://localhost:8080/api/v1/payment/create
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjUzMzM1NzQ5LCJleHAiOjE2NTMzMzkzNDksInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.ijkthJ0f_KMnzpsfaqx8tBdODFUVUmxWXZAReV7WNKw
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzIiwiaWF0IjoxNjUzMzc5ODIxLCJleHAiOjE2NTMzODM0MjEsInVzZXJOYW1lIjoiKzk5ODkzMjE1ODAwMCIsImlzcyI6IkRBVlJfQkFOSyJ9.ZuAttESAPLOPISnvD10yRoPU2KYI4jOAKZhkMHlP5Y0
 
 {
   "sum": "2000000",
   "description": "new payment created",
-  "studentId": "2",
+  "studentId": "1",
   "paymentTypeId": "1"
 }
 

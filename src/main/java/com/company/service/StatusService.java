@@ -1,7 +1,7 @@
 package com.company.service;
 
-import com.company.dto.ChangeStatusDetailDTO;
-import com.company.dto.StatusDTO;
+import com.company.dto.status.ChangeStatusDetailDTO;
+import com.company.dto.status.StatusDTO;
 import com.company.entity.StatusEntity;
 import com.company.exceptions.ItemAlreadyExistsException;
 import com.company.exceptions.ItemNotFoundException;

@@ -1,10 +1,7 @@
 package com.company.entity;
 
-import com.company.enums.UserRole;
-import com.company.user.User;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.usertype.UserType;
 
 import javax.persistence.*;
 
@@ -18,6 +15,6 @@ public class TeacherEntity extends BaseEntity {
 
     @OneToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private UserEntity userEntity;
 
 }

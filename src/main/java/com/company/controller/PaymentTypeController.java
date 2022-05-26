@@ -1,13 +1,15 @@
 package com.company.controller;
 
-import com.company.dto.ChangePaymentTypeDetailDTO;
-import com.company.dto.PaymentTypeDTO;
+import com.company.dto.payment.ChangePaymentTypeDetailDTO;
+import com.company.dto.payment.PaymentTypeDTO;
 import com.company.service.PaymentTypeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("api/v1/payment-type")
@@ -22,7 +24,7 @@ public class PaymentTypeController {
 
     @PostMapping("/create")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<PaymentTypeDTO> create(@RequestBody PaymentTypeDTO dto) {
+    public ResponseEntity<PaymentTypeDTO> create(@RequestBody @Valid PaymentTypeDTO dto) {
         log.info("Create payment type {}" , dto);
         return ResponseEntity.ok(paymentTypeService.create(dto));
     }
@@ -42,7 +44,7 @@ public class PaymentTypeController {
 
     @PutMapping("/update")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<?> update(@RequestBody ChangePaymentTypeDetailDTO dto) {
+    public ResponseEntity<?> update(@RequestBody @Valid ChangePaymentTypeDetailDTO dto) {
         log.info("Update payment type detail {}", dto);
         return ResponseEntity.ok(paymentTypeService.update(dto));
     }

@@ -1,7 +1,7 @@
 package com.company.config;
 
 import com.company.dto.JwtDTO;
-import com.company.user.UserService;
+import com.company.service.UserService;
 import com.company.util.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

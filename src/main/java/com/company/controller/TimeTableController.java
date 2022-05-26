@@ -1,13 +1,15 @@
 package com.company.controller;
 
-import com.company.dto.ChangeTimeTableDetailDTO;
-import com.company.dto.TimeTableDTO;
+import com.company.dto.time.ChangeTimeTableDetailDTO;
+import com.company.dto.time.TimeTableDTO;
 import com.company.service.TimeTableService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor
@@ -22,7 +24,7 @@ public class TimeTableController {
 
     @PostMapping("/create")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<TimeTableDTO> create(@RequestBody TimeTableDTO dto) {
+    public ResponseEntity<TimeTableDTO> create(@RequestBody @Valid TimeTableDTO dto) {
         log.info("Create time table {}" , dto);
         return ResponseEntity.ok(timeTableService.create(dto));
     }

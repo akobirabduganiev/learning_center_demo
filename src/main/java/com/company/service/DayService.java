@@ -1,7 +1,7 @@
 package com.company.service;
 
-import com.company.dto.ChangeDayDetailDTO;
-import com.company.dto.DayDTO;
+import com.company.dto.day.ChangeDayDetailDTO;
+import com.company.dto.day.DayDTO;
 import com.company.entity.DayEntity;
 import com.company.exceptions.ItemAlreadyExistsException;
 import com.company.exceptions.ItemNotFoundException;

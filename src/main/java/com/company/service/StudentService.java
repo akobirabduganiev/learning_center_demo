@@ -1,14 +1,11 @@
 package com.company.service;
 
-import com.company.dto.StudentDTO;
-import com.company.dto.TeacherDTO;
-import com.company.dto.UserDetailDTO;
+import com.company.dto.student.StudentDTO;
+import com.company.dto.user.UserDetailDTO;
 import com.company.entity.StudentEntity;
-import com.company.entity.TeacherEntity;
 import com.company.exceptions.ItemNotFoundException;
 import com.company.repository.StudentRepository;
-import com.company.user.User;
-import com.company.user.UserService;
+import com.company.entity.UserEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
@@ -56,7 +53,7 @@ public class StudentService {
                 .orElseThrow(() -> new ItemNotFoundException("student not found!"));
 
         studentRepository.deleteById(id);
-        userService.deleteById(entity.getUser().getId());
+        userService.deleteById(entity.getUserEntity().getId());
 
         return "student deleted successfully!";
     }
@@ -75,19 +72,19 @@ public class StudentService {
      * OTHER METHODS
      **/
 
-    public void saveStudent(User user) {
+    public void saveStudent(UserEntity userEntity) {
         var entity = new StudentEntity();
 
-        entity.setUser(user);
+        entity.setUserEntity(userEntity);
         studentRepository.save(entity);
     }
 
     public StudentDTO toDTO(StudentEntity entity) {
         var dto = new StudentDTO();
 
-        dto.setPhone(entity.getUser().getPhone());
-        dto.setFirstName(entity.getUser().getFirstName());
-        dto.setLastName(entity.getUser().getLastName());
+        dto.setPhone(entity.getUserEntity().getPhone());
+        dto.setFirstName(entity.getUserEntity().getFirstName());
+        dto.setLastName(entity.getUserEntity().getLastName());
         dto.setCreatedDate(entity.getCreatedDate());
         dto.setLastModifiedDate(entity.getLastModifiedDate());
 

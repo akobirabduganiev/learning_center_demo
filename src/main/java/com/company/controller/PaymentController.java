@@ -1,13 +1,15 @@
 package com.company.controller;
 
-import com.company.dto.ChangePaymentDetailDTO;
-import com.company.dto.PaymentDTO;
+import com.company.dto.payment.ChangePaymentDetailDTO;
+import com.company.dto.payment.PaymentDTO;
 import com.company.service.PaymentService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor
@@ -22,7 +24,7 @@ public class PaymentController {
 
     @PostMapping("/create")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<PaymentDTO> create(@RequestBody PaymentDTO dto) {
+    public ResponseEntity<PaymentDTO> create(@RequestBody @Valid PaymentDTO dto) {
         log.info("Create payment {}" , dto);
         return ResponseEntity.ok(paymentService.create(dto));
     }
@@ -42,7 +44,7 @@ public class PaymentController {
 
     @PutMapping("/update")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<?> update(@RequestBody ChangePaymentDetailDTO dto) {
+    public ResponseEntity<?> update(@RequestBody @Valid ChangePaymentDetailDTO dto) {
         log.info("Update payment detail {}", dto);
         return ResponseEntity.ok(paymentService.update(dto));
     }

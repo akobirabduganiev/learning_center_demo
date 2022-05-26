@@ -1,7 +1,7 @@
 package com.company.service;
 
-import com.company.dto.ChangeRoomDetailDTO;
-import com.company.dto.RoomDTO;
+import com.company.dto.room.ChangeRoomDetailDTO;
+import com.company.dto.room.RoomDTO;
 import com.company.entity.RoomEntity;
 import com.company.exceptions.ItemAlreadyExistsException;
 import com.company.exceptions.ItemNotFoundException;

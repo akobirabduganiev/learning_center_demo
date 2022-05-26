@@ -1,13 +1,15 @@
 package com.company.controller;
 
-import com.company.dto.ChangeRoomDetailDTO;
-import com.company.dto.RoomDTO;
+import com.company.dto.room.ChangeRoomDetailDTO;
+import com.company.dto.room.RoomDTO;
 import com.company.service.RoomService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("api/v1/room")
@@ -22,7 +24,7 @@ public class RoomController {
 
     @PostMapping("/create")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<RoomDTO> create(@RequestBody RoomDTO dto) {
+    public ResponseEntity<RoomDTO> create(@RequestBody @Valid RoomDTO dto) {
         log.info("Create room {}" , dto);
         return ResponseEntity.ok(roomService.create(dto));
     }
@@ -42,7 +44,7 @@ public class RoomController {
 
     @PutMapping("/update")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<?> update(@RequestBody ChangeRoomDetailDTO dto) {
+    public ResponseEntity<?> update(@RequestBody @Valid ChangeRoomDetailDTO dto) {
         log.info("Update room detail {}", dto);
         return ResponseEntity.ok(roomService.update(dto));
     }

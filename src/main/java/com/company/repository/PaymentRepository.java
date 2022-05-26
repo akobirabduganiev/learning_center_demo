@@ -11,14 +11,14 @@ import java.time.LocalDateTime;
 
 public interface PaymentRepository extends JpaRepository<PaymentEntity, Long> {
 
-    /*@Transactional
+    @Transactional
     @Modifying
-    @Query("update PaymentEntity set studentId=:studentId, paymentTypeId=:paymentTypeId," +
-            "sum=:sum where id=:id")
+    @Query("update PaymentEntity p set p.studentId=:studentId, p.paymentTypeId=:paymentTypeId," +
+            "p.sum=:sum where p.id=:id")
     void updatePaymentDetail(@Param("studentId") Long studentId,
                              @Param("paymentTypeId") Long paymentTypeId,
                              @Param("sum") Double sum,
-                             @Param("id") Long id);*/
+                             @Param("id") Long id);
 
     @Transactional
     @Modifying
